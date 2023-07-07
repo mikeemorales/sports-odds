@@ -1,7 +1,7 @@
 # SPORTS ODDS TRACKER
 
-### This application tracks the sports-betting odds
-###
+### This application tracks the sports-betting odds for U.S. SPORTS (see list below)
+#
 ## TO RUN:
 #### BACKEND
 ```
@@ -13,11 +13,11 @@ yarn start
 ```
 #
 ## API KEY ACCESS:
-#### *REGISTRATION REQUIRED*
+#### an api key is required to access data. When acquired, API Key can be stored in a .env file and imported into your server.js file. See link below to acquire API Key.
 ```
 https://the-odds-api.com/#get-access
 ```
-#### PRICING
+#### PRICING FOR USER
 ```
 FREE/mo   500   requests/mo (no historical odds)
 $25/mo    20k   requests/mo
@@ -26,46 +26,49 @@ $99/mo    4.5m  requests/mo
 $199/mo   12m   requests/mo
 ```
 #
-## URL:
-#### BASE
+## URL & ENDPOINTS:
+### BASE API
 ```
 https://odds.p.rapidapi.com
 ```
-#### ALL ODDS
+### API ENDPOINTS
 ```
-/v4/sports/upcoming/odds
+ODDS:
+
+    /v4/sports/upcoming/odds
+
+SCORES:
+
+    /v4/sports/upcoming/scores
+
+SPECIFIC SPORT:
+
+    /v4/sports/{REPLACE-WITH-SPORT}/odds
+
+SPORTS:
+
+    americanfootball_nfl
+    americanfootball_ncaaf
+    baseball_mlb
+    baseball_ncaa
+    basketball_nba
+    basketball_ncaab
+    icehockey_nhl
+    soccer_usa_mls
 ```
-#### ALL SCORES
+### BACKEND/ROUTING
 ```
-/v4/sports/upcoming/scores
-```
-#### SPECIFIC SPORT
-```
-/v4/sports/{REPLACE-WITH-SPORT}/odds
-```
-#### SPORTS:
-```
-americanfootball_nfl
-americanfootball_ncaaf
-baseball_mlb
-baseball_ncaa
-basketball_nba
-basketball_ncaab
-icehockey_nhl
-soccer_usa_mls
-```
-#
-## ENDPOINTS:
-#### LOCALHOST:9001/{insert-endpoint}
-#### Confirmation
-```
-/express_backend
-```
-#### Odds
-```
-/api/odds
-```
-#### Scores
-```
-/api/scores
+LOCALHOST:9001/{insert-endpoint}
+
+CONFIRMATION:
+
+    /express_backend
+
+ODDS:
+
+    /api/odds
+
+SCORES:
+
+    /api/scores
 ```
