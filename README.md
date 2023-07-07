@@ -1,7 +1,5 @@
 # SPORTS ODDS TRACKER
-
-### This application tracks the sports-betting odds for U.S. SPORTS (see list below)
-#
+This application tracks the sports-betting odds for U.S. SPORTS (see list below)
 ## TO RUN:
 #### BACKEND
 ```
@@ -11,9 +9,8 @@ node server.js
 ```
 yarn start
 ```
-#
 ## API KEY ACCESS:
-#### an api key is required to access data. When acquired, API Key can be stored in a .env file and imported into your server.js file. See link below to acquire API Key.
+an api key is required to access data. When acquired, API Key can be stored in a .env file and imported into your server.js file. See link below to acquire API Key.
 ```
 https://the-odds-api.com/#get-access
 ```
@@ -25,7 +22,6 @@ $49/mo    90k   requests/mo
 $99/mo    4.5m  requests/mo
 $199/mo   12m   requests/mo
 ```
-#
 ## URL & ENDPOINTS:
 ### BASE API
 ```
