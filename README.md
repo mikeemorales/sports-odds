@@ -27,13 +27,21 @@ $199/mo   12m   requests/mo
 ```
 #
 ## URL:
-#### ALL TRACKED ODDS
+#### BASE
 ```
-https://odds.p.rapidapi.com/v4/sports/upcoming/odds
+https://odds.p.rapidapi.com
+```
+#### ALL ODDS
+```
+/v4/sports/upcoming/odds
+```
+#### ALL SCORES
+```
+/v4/sports/upcoming/scores
 ```
 #### SPECIFIC SPORT
 ```
-https://odds.p.rapidapi.com/v4/sports/{REPLACE-WITH-SPORT}/odds
+/v4/sports/{REPLACE-WITH-SPORT}/odds
 ```
 #### SPORTS:
 ```
@@ -56,4 +64,8 @@ soccer_usa_mls
 #### Odds
 ```
 /api/odds
+```
+#### Scores
+```
+/api/scores
 ```

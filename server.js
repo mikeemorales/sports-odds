@@ -1,7 +1,8 @@
 const express = require('express');
 const axios = require('axios')
+const {json} = require("express");
 const app = express();
-const port = process.env.PORT || 9000;
+const port = process.env.PORT || 9001;
 require('dotenv').config()
 
 app.get('/express_backend', (req, res) => {
@@ -26,6 +27,24 @@ app.get('/api/odds', async (req, res) => {
     try {
         const response = await axios.request(options);
         res.json(response.data);
+    } catch (error) {
+        res.status(500).json({ error: 'An error occurred' });
+    }
+});
+
+app.get('/api/scores', async (req, res) => {
+    const options = {
+        method: 'GET',
+        url: 'https://odds.p.rapidapi.com/v4/sports/baseball_mlb/scores',
+        params: {daysFrom: '1'},
+        headers: {
+            'X-RapidAPI-Key': process.env.API_KEY,
+            'X-RapidAPI-Host': 'odds.p.rapidapi.com'
+        }
+    };
+    try {
+        const response = await axios.request(options)
+        res.json(response.data)
     } catch (error) {
         res.status(500).json({ error: 'An error occurred' });
     }
