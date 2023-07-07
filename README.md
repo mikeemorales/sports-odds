@@ -2,17 +2,38 @@
 
 ### This application tracks the sports-betting odds
 ###
-### TO RUN:
-```node server.js``` -- local 9000 || 9001
-### URL:
+## TO RUN:
+#### BACKEND
 ```
-https://odds.p.rapidapi.com/v4/sports/{REPLACE-WITH-SPORT}/odds
+node server.js
 ```
-### API KEY ACCESS:
+#### CLIENT-SIDE
+```
+yarn start
+```
+#
+## API KEY ACCESS:
+#### *REGISTRATION REQUIRED*
 ```
 https://the-odds-api.com/#get-access
-
-FREE - 500 req/mo
+```
+#### PRICING
+```
+FREE/mo   500   requests/mo (no historical odds)
+$25/mo    20k   requests/mo
+$49/mo    90k   requests/mo
+$99/mo    4.5m  requests/mo
+$199/mo   12m   requests/mo
+```
+#
+## URL:
+#### ALL TRACKED ODDS
+```
+https://odds.p.rapidapi.com/v4/sports/upcoming/odds
+```
+#### SPECIFIC SPORT
+```
+https://odds.p.rapidapi.com/v4/sports/{REPLACE-WITH-SPORT}/odds
 ```
 #### SPORTS:
 ```
@@ -25,7 +46,9 @@ basketball_ncaab
 icehockey_nhl
 soccer_usa_mls
 ```
-### ENDPOINTS:
+#
+## ENDPOINTS:
+#### LOCALHOST:9000 or 9001
 #### Confirmation
 ```
 /express_backend
