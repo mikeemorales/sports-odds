@@ -48,7 +48,7 @@ soccer_usa_mls
 ```
 #
 ## ENDPOINTS:
-#### LOCALHOST:9000 or 9001
+#### LOCALHOST:9001/{insert-endpoint}
 #### Confirmation
 ```
 /express_backend
