@@ -10,7 +10,7 @@ node server.js
 yarn start
 ```
 #### PACKAGE.JSON
-Currently, your basic yarn/npx scripts run into errors, so you will need to replace your start and build scripts with the following:
+When accessing the client-side, the default yarn/npx run script contains version errors, so you will need to replace your start and build scripts with the following:
 ```
 "start": "react-scripts --openssl-legacy-provider start",
 "build": "react-scripts --openssl-legacy-provider build",
