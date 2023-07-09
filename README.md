@@ -9,6 +9,12 @@ node server.js
 ```
 yarn start
 ```
+#### PACKAGE.JSON
+Currently, your basic yarn/npx scripts run into errors, so you will need to replace your start and build scripts with the following:
+```
+"start": "react-scripts --openssl-legacy-provider start",
+"build": "react-scripts --openssl-legacy-provider build",
+```
 ## API KEY ACCESS:
 an api key is required to access data. When acquired, API Key can be stored in a .env file and imported into your server.js file. See link below to acquire API Key.
 ```
@@ -23,6 +29,7 @@ $99/mo    4.5m  requests/mo
 $199/mo   12m   requests/mo
 ```
 ## URL & ENDPOINTS:
+when fetching your api, you can insert these URLS to access the data. You have the option to access odds or scores, as well as specific sports. In development, you can access the backend data on port 9001, including any of the backend endpoints listed below. 'CONFIRMATION' is only used for successful access of your node server.
 ### BASE API
 ```
 https://odds.p.rapidapi.com
