@@ -1,4 +1,6 @@
 # SPORTS ODDS TRACKER
+![SportsTracker](public/sportstracker.png)
+## GOAL:
 This application tracks the sports-betting odds for U.S. SPORTS (see list below)
 ## TO RUN:
 #### BACKEND
