@@ -49,7 +49,7 @@ app.get('/api/scores', async (req, res) => {
     }
 });
 
-app.get('api/scoreboard', async (req, res) => {
+app.get('/api/scoreboard', async (req, res) => {
     const options = {
         method: 'GET',
         url: 'https://tank01-mlb-live-in-game-real-time-statistics.p.rapidapi.com/getMLBScoresOnly',

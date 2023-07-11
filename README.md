@@ -18,7 +18,7 @@ When accessing the client-side, the default yarn/npx run script contains version
 "build": "react-scripts --openssl-legacy-provider build",
 ```
 ## API KEY ACCESS:
-an api key is required to access data. When acquired, API Key can be stored in a .env file and imported into your server.js file. See link below to acquire API Key.
+an api key is required to access data. It is recommended that after acquiring your key, you should encrypt it in some type of key vault system, such as AWS Secrets Managers or Azure Key Vault -- whichever works with your application. 
 ```
 https://the-odds-api.com/#get-access
 ```
