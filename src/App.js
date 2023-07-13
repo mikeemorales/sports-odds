@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import FetchMLBTeams from "./components/sports/MlbTeams";
 
 function App() {
   const [data, setData] = useState(null);
@@ -21,7 +22,7 @@ function App() {
 
   return (
       <div className="App">
-        {data}
+        <FetchMLBTeams/>
       </div>
   );
 }
