@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import FetchMLBTeams from "./components/sports/MlbTeams";
+import MainSideNav from "./components/nav/MainSideBar";
 
 function App() {
-  const [data, setData] = useState(null);
+  // const [data, setData] = useState(null);
 
   // const callBackendAPI = async () => {
   //   const response = await fetch('/api/odds');
@@ -22,7 +22,7 @@ function App() {
 
   return (
       <div className="App">
-        <FetchMLBTeams/>
+        <MainSideNav/>
       </div>
   );
 }
