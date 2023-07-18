@@ -1,9 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Box from "@mui/material/Box";
 import {Container, Grid} from "@mui/material";
 import GamesDataGrid from "./GamesDataGrid";
+import SelectedGamesBigData from "./SelectedRowData";
 
 const FetchMLBTeams = () => {
+    const [selectedRow, setSelectedRow] = useState(null);
+
     return (
         <Container>
             <Box sx={{ width: '100%' }}>
@@ -21,21 +24,22 @@ const FetchMLBTeams = () => {
                     {/*ROW 2*/}
                     <Grid item xs={10}>
                         <Box sx={{ display: 'flex' }}>
-                            <Grid item xs={2}>
-                                OPENING
-                            </Grid>
-                            <Grid item xs={2}>
-                                CURRENT
-                            </Grid>
-                            <Grid item xs={2}>
-                                vs.
-                            </Grid>
-                            <Grid item xs={2}>
-                                CURRENT
-                            </Grid>
-                            <Grid item xs={2}>
-                                OPENING
-                            </Grid>
+                            {/*<Grid item xs={2}>*/}
+                            {/*    OPENING*/}
+                            {/*</Grid>*/}
+                            {/*<Grid item xs={2}>*/}
+                            {/*    CURRENT*/}
+                            {/*</Grid>*/}
+                            {/*<Grid item xs={2}>*/}
+                            {/*    vs.*/}
+                            {/*</Grid>*/}
+                            {/*<Grid item xs={2}>*/}
+                            {/*    CURRENT*/}
+                            {/*</Grid>*/}
+                            {/*<Grid item xs={2}>*/}
+                            {/*    OPENING*/}
+                            {/*</Grid>*/}
+                            <SelectedGamesBigData selectedRow={selectedRow}/>
                         </Box>
                     </Grid>
                     <Grid item xs={2}>
@@ -43,7 +47,7 @@ const FetchMLBTeams = () => {
                     </Grid>
                     {/*ROW 3*/}
                     <Grid item xs={12}>
-                        <GamesDataGrid/>
+                        <GamesDataGrid onRowSelected={(rowData) => setSelectedRow(rowData)}/>
                     </Grid>
                 </Grid>
             </Box>
