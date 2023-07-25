@@ -64,6 +64,7 @@ const GamesDataGrid = ({ onRowSelected }) => {
                     },
                 }}
                 pageSizeOptions={[20]}
+                checkboxSelection
             />
         </Box>
     );

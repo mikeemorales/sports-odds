@@ -4,7 +4,7 @@ import {Container, Grid} from "@mui/material";
 import GamesDataGrid from "./GamesDataGrid";
 import SelectedGamesBigData from "./SelectedRowData";
 
-const FetchMLBTeams = () => {
+const MLBFullDataLayout = () => {
     const [selectedRow, setSelectedRow] = useState(null);
 
     return (
@@ -55,4 +55,4 @@ const FetchMLBTeams = () => {
     )
 }
 
-export default FetchMLBTeams
+export default MLBFullDataLayout

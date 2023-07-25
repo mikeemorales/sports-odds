@@ -6,7 +6,6 @@ function SelectedGamesBigData({ selectedRow }) {
             {selectedRow ? (
                 <div>
                     <h2>Selected Row Information</h2>
-                    <p>ID: {selectedRow.id}</p>
                     <p>MATCH UP: {selectedRow.matchUp}</p>
                 </div>
             ) : (
