@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import MainSideNav from "./components/nav/MainSideBar";
+import '../src/components/theme/App.css'
 
 function App() {
   // const [data, setData] = useState(null);
@@ -21,7 +22,7 @@ function App() {
   // }, []);
 
   return (
-      <div className="App">
+      <div className="gradient-background">
         <MainSideNav/>
       </div>
   );

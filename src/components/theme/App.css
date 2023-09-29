@@ -1,0 +1,6 @@
+.gradient-background {
+    background: rgb(26,58,106);
+    background: linear-gradient(180deg, rgba(26,58,106,1) 0%, rgba(7,18,33,1) 100%); /* Replace with your desired colors */
+    min-height: 100vh; /* Ensure the gradient covers the entire viewport */
+
+}

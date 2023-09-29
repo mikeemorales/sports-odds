@@ -1,25 +1,49 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Box from "@mui/material/Box";
 import {Container, Grid} from "@mui/material";
 import GamesDataGrid from "./GamesDataGrid";
 import SelectedGamesBigData from "./SelectedRowData";
+import Typography from "@mui/material/Typography";
+import axios from "axios";
 
 const MLBFullDataLayout = () => {
     const [selectedRow, setSelectedRow] = useState(null);
+    // const [oddsData, setOddsData] = useState(null)
+    //
+    // useEffect(() => {
+    //     const fetchData = async () => {
+    //         try {
+    //             const response = await axios.get('9001/api/odds');
+    //             console.log(response.data); // Log the entire data structure
+    //             setOddsData(response.data);
+    //         } catch (error) {
+    //             console.error('Error fetching data:', error);
+    //         }
+    //     };
+    //
+    //     fetchData();
+    // }, []);
+
 
     return (
         <Container>
-            <Box sx={{ width: '100%' }}>
+            <Box sx={{ width: '100%', mt: 5, color: 'white' }}>
                 <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
                     {/*ROW 1*/}
                     <Grid item xs={3}>
                         AWAY TEAM
+                        <Typography>
+                            TEST
+                        </Typography>
                     </Grid>
                     <Grid item xs={6}>
                         AWAY LOGO - vs HOME LOGO
                     </Grid>
                     <Grid item xs={3}>
                         HOME TEAM
+                        <Typography>
+                            TEST
+                        </Typography>
                     </Grid>
                     {/*ROW 2*/}
                     <Grid item xs={10}>

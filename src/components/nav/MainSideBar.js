@@ -1,31 +1,32 @@
 import React from 'react';
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
-import CssBaseline from '@mui/material/CssBaseline';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import List from '@mui/material/List';
-import Typography from '@mui/material/Typography';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
 import MlbTeams from "../sports/mlb/MlbTeams";
 import {Button, Divider} from "@mui/material";
+import ToolBarGameCards from "./ToolBarGameCards";
+import '../theme/App.css'
 
 const drawerWidth = 240;
 
 const MainSideNav = () => {
     return (
         <Box sx={{ display: 'flex' }}>
-            <CssBaseline />
             <AppBar
                 position="fixed"
-                sx={{ width: `calc(100% - ${drawerWidth}px)`, ml: `${drawerWidth}px` }}
+                sx={{
+                    width: `calc(100% - ${drawerWidth}px)`,
+                    ml: `${drawerWidth}px`,
+                    backgroundColor: 'transparent',
+                }}
             >
                 <Toolbar>
-                    <Typography variant="h6" noWrap component="div">
-                        DISPLAY SCORES HERE
-                    </Typography>
+                    <ToolBarGameCards/>
                 </Toolbar>
             </AppBar>
             <Drawer
@@ -35,10 +36,13 @@ const MainSideNav = () => {
                     '& .MuiDrawer-paper': {
                         width: drawerWidth,
                         boxSizing: 'border-box',
+                        backgroundColor: 'transparent',
+                        borderColor: 'white',
+                        color: 'white'
                     },
                     display: 'flex',
                     flexDirection: 'column',
-                    justifyContent: 'center'
+                    justifyContent: 'center',
                 }}
                 variant="permanent"
                 anchor="left"
@@ -46,7 +50,7 @@ const MainSideNav = () => {
                 <Toolbar />
                 <List sx={{ height: '70%' }}>
                     {['MLB', 'NFL', 'NBA', 'NHL'].map((text, index) => (
-                        <ListItem key={text} disablePadding>
+                        <ListItem key={index} disablePadding>
                             <ListItemButton>
                                 <ListItemText primary={text} />
                             </ListItemButton>
@@ -61,7 +65,7 @@ const MainSideNav = () => {
             </Drawer>
             <Box
                 component="main"
-                sx={{ flexGrow: 1, bgcolor: 'background.default', p: 3 }}
+                sx={{ flexGrow: 1, p: 3 }}
             >
                 <Toolbar />
                 <MlbTeams/>
