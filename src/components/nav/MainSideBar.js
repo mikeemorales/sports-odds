@@ -36,7 +36,7 @@ const MainSideNav = () => {
                     '& .MuiDrawer-paper': {
                         width: drawerWidth,
                         boxSizing: 'border-box',
-                        backgroundColor: 'transparent',
+                        backgroundColor: 'rgba(0,0,0,0.25)',
                         borderColor: 'white',
                         color: 'white'
                     },
@@ -47,7 +47,9 @@ const MainSideNav = () => {
                 variant="permanent"
                 anchor="left"
             >
-                <Toolbar />
+                <Toolbar>
+                    LOGO
+                </Toolbar>
                 <List sx={{ height: '70%' }}>
                     {['MLB', 'NFL', 'NBA', 'NHL'].map((text, index) => (
                         <ListItem key={index} disablePadding>

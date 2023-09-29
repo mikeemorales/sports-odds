@@ -1,33 +1,70 @@
 import React from 'react';
 import Box from '@mui/material/Box';
 import { DataGrid } from '@mui/x-data-grid';
+import '../../theme/App.css'
+import {alpha, gridClasses, styled} from "@mui/material";
+
+const ODD_OPACITY = 0.2;
+
+const StripedDataGrid = styled(DataGrid)(({ theme }) => ({
+    [`& .${gridClasses.row}.even`]: {
+        backgroundColor: theme.palette.grey[200],
+        '&:hover, &.Mui-hovered': {
+            backgroundColor: alpha(theme.palette.primary.main, ODD_OPACITY),
+            '@media (hover: none)': {
+                backgroundColor: 'transparent',
+            },
+        },
+        '&.Mui-selected': {
+            backgroundColor: alpha(
+                theme.palette.primary.main,
+                ODD_OPACITY + theme.palette.action.selectedOpacity,
+            ),
+            '&:hover, &.Mui-hovered': {
+                backgroundColor: alpha(
+                    theme.palette.primary.main,
+                    ODD_OPACITY +
+                    theme.palette.action.selectedOpacity +
+                    theme.palette.action.hoverOpacity,
+                ),
+                // Reset on touch devices, it doesn't add specificity
+                '@media (hover: none)': {
+                    backgroundColor: alpha(
+                        theme.palette.primary.main,
+                        ODD_OPACITY + theme.palette.action.selectedOpacity,
+                    ),
+                },
+            },
+        },
+    },
+}));
 
 const GamesDataGrid = ({ onRowSelected }) => {
     const columns = [
         {
             field: 'matchUp',
             headerName: 'Match Ups',
-            width: 200
+            width: 200,
         },
         {
             field: 'runLine',
             headerName: 'Run Line',
             type: 'number',
-            width: 100,
+            width: 250,
             editable: false,
         },
         {
             field: 'overUnder',
             headerName: 'Over / Under',
             type: 'number',
-            width: 100,
+            width: 250,
             editable: false,
         },
         {
             field: 'moneyLine',
             headerName: 'Money Line',
             type: 'number',
-            width: 100,
+            width: 250,
             editable: false,
         },
     ];
@@ -80,7 +117,7 @@ const GamesDataGrid = ({ onRowSelected }) => {
 
     return (
         <Box sx={{ height: 400, width: '100%' }}>
-            <DataGrid
+            <StripedDataGrid
                 rows={rows}
                 columns={columns}
                 onRowSelected={(e) => onRowSelected(e.data)}
@@ -93,7 +130,8 @@ const GamesDataGrid = ({ onRowSelected }) => {
                 }}
                 pageSizeOptions={[20]}
                 checkboxSelection
-                sx={{ color: 'white' }}
+                sx={{ color: 'white', border: 'none' }}
+                getRowClassName={(params) => params.indexRelativeToCurrentPage % 2 === 0 ? 'even': 'odd'}
             />
         </Box>
     );
