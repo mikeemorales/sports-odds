@@ -27,8 +27,8 @@ const MLBFullDataLayout = () => {
 
     return (
         <Container>
-            <Box sx={{ width: '100%', mt: 5, color: 'white' }}>
-                <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
+            <Box sx={{ flexGrow: 1, width: '100%', mt: 5, color: 'white' }}>
+                <Grid container rowSpacing={1}>
                     {/*ROW 1*/}
                     <Box sx={{
                         display: 'flex',

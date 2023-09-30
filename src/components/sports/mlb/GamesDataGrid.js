@@ -44,27 +44,27 @@ const GamesDataGrid = ({ onRowSelected }) => {
         {
             field: 'matchUp',
             headerName: 'Match Ups',
-            width: 200,
+            flex: 0.5,
         },
         {
             field: 'runLine',
             headerName: 'Run Line',
             type: 'number',
-            width: 250,
+            flex: 1,
             editable: false,
         },
         {
             field: 'overUnder',
             headerName: 'Over / Under',
             type: 'number',
-            width: 250,
+            flex: 1,
             editable: false,
         },
         {
             field: 'moneyLine',
             headerName: 'Money Line',
             type: 'number',
-            width: 250,
+            flex: 1,
             editable: false,
         },
     ];
@@ -112,7 +112,11 @@ const GamesDataGrid = ({ onRowSelected }) => {
         { id: 3, matchUp: 'Dodgers vs. Giants', runLine: 100, overUnder: 100, moneyLine: 100 },
         { id: 4, matchUp: 'Dodgers vs. Giants', runLine: 100, overUnder: 100, moneyLine: 100 },
         { id: 5, matchUp: 'Dodgers vs. Giants', runLine: 100, overUnder: 100, moneyLine: 100 },
-
+        { id: 6, matchUp: 'Dodgers vs. Giants', runLine: 100, overUnder: 100, moneyLine: 100 },
+        { id: 7, matchUp: 'Dodgers vs. Giants', runLine: 100, overUnder: 100, moneyLine: 100 },
+        { id: 8, matchUp: 'Dodgers vs. Giants', runLine: 100, overUnder: 100, moneyLine: 100 },
+        { id: 9, matchUp: 'Dodgers vs. Giants', runLine: 100, overUnder: 100, moneyLine: 100 },
+        { id: 10, matchUp: 'Dodgers vs. Giants', runLine: 100, overUnder: 100, moneyLine: 100 },
     ];
 
     return (
@@ -121,6 +125,7 @@ const GamesDataGrid = ({ onRowSelected }) => {
                 rows={rows}
                 columns={columns}
                 onRowSelected={(e) => onRowSelected(e.data)}
+                rowHeight={50}
                 initialState={{
                     pagination: {
                         paginationModel: {
@@ -129,7 +134,6 @@ const GamesDataGrid = ({ onRowSelected }) => {
                     },
                 }}
                 pageSizeOptions={[20]}
-                checkboxSelection
                 sx={{ color: 'white', border: 'none' }}
                 getRowClassName={(params) => params.indexRelativeToCurrentPage % 2 === 0 ? 'even': 'odd'}
             />
