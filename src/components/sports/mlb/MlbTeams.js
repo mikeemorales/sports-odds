@@ -1,30 +1,11 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import Box from "@mui/material/Box";
 import {Container, Grid} from "@mui/material";
 import GamesDataGrid from "./GamesDataGrid";
-import SelectedGamesBigData from "./SelectedRowData";
 import Typography from "@mui/material/Typography";
-import axios from "axios";
+import ApiData from "../../ApiData";
 
 const MLBFullDataLayout = () => {
-    const [selectedRow, setSelectedRow] = useState(null);
-    // const [oddsData, setOddsData] = useState(null)
-    //
-    // useEffect(() => {
-    //     const fetchData = async () => {
-    //         try {
-    //             const response = await axios.get('9001/api/odds');
-    //             console.log(response.data); // Log the entire data structure
-    //             setOddsData(response.data);
-    //         } catch (error) {
-    //             console.error('Error fetching data:', error);
-    //         }
-    //     };
-    //
-    //     fetchData();
-    // }, []);
-
-
     return (
         <Container>
             <Box sx={{ flexGrow: 1, width: '100%', mt: 5, color: 'white' }}>
@@ -83,8 +64,11 @@ const MLBFullDataLayout = () => {
                     {/*ROW 3*/}
                     <Grid item xs={12} sx={{ borderBottom: '1px solid white', mt: 5 }}>Games</Grid>
                     <Grid item xs={12}>
-                        <GamesDataGrid onRowSelected={(rowData) => setSelectedRow(rowData)}/>
+                        <GamesDataGrid/>
                     </Grid>
+                    {/*<Grid item xs={12}>*/}
+                    {/*    <ApiData/>*/}
+                    {/*</Grid>*/}
                 </Grid>
             </Box>
         </Container>

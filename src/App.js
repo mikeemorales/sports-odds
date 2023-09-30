@@ -1,6 +1,7 @@
 import React from 'react';
 import MainSideNav from "./components/nav/MainSideBar";
 import '../src/components/theme/App.css'
+import ApiData from "./components/ApiData";
 
 function App() {
   // const [data, setData] = useState(null);

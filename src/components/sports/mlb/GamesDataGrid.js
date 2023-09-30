@@ -1,8 +1,9 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import Box from '@mui/material/Box';
 import { DataGrid } from '@mui/x-data-grid';
 import '../../theme/App.css'
 import {alpha, gridClasses, styled} from "@mui/material";
+import axios from "axios";
 
 const ODD_OPACITY = 0.2;
 
@@ -40,6 +41,28 @@ const StripedDataGrid = styled(DataGrid)(({ theme }) => ({
 }));
 
 const GamesDataGrid = ({ onRowSelected }) => {
+    const [apiData, setApiData] = useState([]);
+
+    useEffect(() => {
+        axios.get('http://localhost:9001/api/odds')
+            .then(response => {
+                setApiData(response.data); // Assuming your API returns an array of events
+            })
+            .catch(error => {
+                console.error('Error fetching data:', error);
+            });
+    }, []);
+
+    const convertToAmericanOdds = (price) => {
+            if (price > 2) {
+                return Math.round((price - 1) * 100)
+            } else if (price < 2) {
+                return Math.round(-100 / price - 1)
+            } else {
+                return 0
+            }
+        }
+
     const columns = [
         {
             field: 'matchUp',
@@ -69,55 +92,13 @@ const GamesDataGrid = ({ onRowSelected }) => {
         },
     ];
 
-    const odds = {
-        runLine: {
-            opening: {
-                points: '-1.5',
-                odd: '+135'
-            },
-            curr: {
-                points: '-1.5',
-                odd: '+105'
-            }
-        },
-        overUnder: {
-            opening: {
-                points: 'o7.5',
-                odd: '-105'
-            },
-            curr: {
-                points: 'u6.5',
-                odd: '-105'
-            }
-        },
-        moneyLine: {
-            opening: {
-                odd: '+135'
-            },
-            curr: {
-                odd: '-225'
-            }
-        }
-    }
-
-    const rows = [
-        {
-            id: 1,
-            matchUp: 'Dodgers vs. Giants',
-            runLine: `${odds.runLine.curr.points} / ${odds.runLine.curr.points}`,
-            overUnder: `${odds.overUnder.curr.points} / ${odds.overUnder.curr.points}`,
-            moneyLine: `${odds.moneyLine.curr.odd} / ${odds.moneyLine.curr.odd}`
-        },
-        { id: 2, matchUp: 'Dodgers vs. Giants', runLine: 100, overUnder: 100, moneyLine: 100 },
-        { id: 3, matchUp: 'Dodgers vs. Giants', runLine: 100, overUnder: 100, moneyLine: 100 },
-        { id: 4, matchUp: 'Dodgers vs. Giants', runLine: 100, overUnder: 100, moneyLine: 100 },
-        { id: 5, matchUp: 'Dodgers vs. Giants', runLine: 100, overUnder: 100, moneyLine: 100 },
-        { id: 6, matchUp: 'Dodgers vs. Giants', runLine: 100, overUnder: 100, moneyLine: 100 },
-        { id: 7, matchUp: 'Dodgers vs. Giants', runLine: 100, overUnder: 100, moneyLine: 100 },
-        { id: 8, matchUp: 'Dodgers vs. Giants', runLine: 100, overUnder: 100, moneyLine: 100 },
-        { id: 9, matchUp: 'Dodgers vs. Giants', runLine: 100, overUnder: 100, moneyLine: 100 },
-        { id: 10, matchUp: 'Dodgers vs. Giants', runLine: 100, overUnder: 100, moneyLine: 100 },
-    ];
+    const rows = apiData.map(event => ({
+        id: event.id,
+        matchUp: `${event.away_team} vs ${event.home_team}`,
+        runLine: `-`,
+        overUnder: `-`,
+        moneyLine: `${event.bookmakers[2]?.markets[0]?.outcomes.find(outcome => outcome.name === event.away_team)?.price} / ${event.bookmakers[2]?.markets[0]?.outcomes.find(outcome => outcome.name === event.home_team)?.price}`
+    }))
 
     return (
         <Box sx={{ height: 400, width: '100%' }}>

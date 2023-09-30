@@ -27,6 +27,9 @@ const MainSideNav = () => {
             >
                 <Toolbar>
                     <ToolBarGameCards/>
+                    <ToolBarGameCards/>
+                    <ToolBarGameCards/>
+                    <ToolBarGameCards/>
                 </Toolbar>
             </AppBar>
             <Drawer

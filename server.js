@@ -1,8 +1,20 @@
 const express = require('express');
 const axios = require('axios')
 const app = express();
+const cors = require('cors')
 const port = process.env.PORT || 9001;
 require('dotenv').config()
+const allowedOrigins = ['http://localhost:3000'];
+
+app.use(cors({
+    origin: function (origin, callback) {
+        if (allowedOrigins.indexOf(origin) !== -1 || !origin) {
+            callback(null, true);
+        } else {
+            callback(new Error('Not allowed by CORS'));
+        }
+    },
+}));
 
 app.get('/express_backend', (req, res) => {
     res.send({ express: 'YOUR EXPRESS BACKEND IS CONNECTED TO REACT' });
