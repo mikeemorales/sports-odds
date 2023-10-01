@@ -1,9 +1,9 @@
-import React from 'react'
+import React, {useState} from 'react'
 import Box from "@mui/material/Box";
 import {Container, Grid} from "@mui/material";
 import GamesDataGrid from "./GamesDataGrid";
 import Typography from "@mui/material/Typography";
-import ApiData from "../../ApiData";
+import FullOdds from "./FullOdds";
 
 const MLBFullDataLayout = () => {
     return (
@@ -33,42 +33,12 @@ const MLBFullDataLayout = () => {
                         </Grid>
                     </Box>
                     {/*ROW 2*/}
-                    <Grid item xs={10} sx={{ borderBottom: '1px solid white', mt: 5 }}>
-                        ODDS
-                    </Grid>
-                    <Grid item xs={2} sx={{ borderBottom: '1px solid white', mt: 5 }}>
-                        LINE UPS
-                    </Grid>
-                    <Grid item xs={10}>
-                        <Box sx={{ display: 'flex' }}>
-                            <Grid item xs={2}>
-                                OPENING
-                            </Grid>
-                            <Grid item xs={2}>
-                                CURRENT
-                            </Grid>
-                            <Grid item xs={2}>
-                                vs.
-                            </Grid>
-                            <Grid item xs={2}>
-                                CURRENT
-                            </Grid>
-                            <Grid item xs={2}>
-                                OPENING
-                            </Grid>
-                        </Box>
-                    </Grid>
-                    <Grid item xs={2}>
-                        LINE UP PLAYERS
-                    </Grid>
+                    <FullOdds/>
                     {/*ROW 3*/}
                     <Grid item xs={12} sx={{ borderBottom: '1px solid white', mt: 5 }}>Games</Grid>
                     <Grid item xs={12}>
                         <GamesDataGrid/>
                     </Grid>
-                    {/*<Grid item xs={12}>*/}
-                    {/*    <ApiData/>*/}
-                    {/*</Grid>*/}
                 </Grid>
             </Box>
         </Container>
