@@ -11,6 +11,7 @@ import MlbTeams from "../sports/mlb/MlbTeams";
 import {Button, Divider} from "@mui/material";
 import ToolBarGameCards from "./ToolBarGameCards";
 import '../theme/App.css'
+import Typography from "@mui/material/Typography";
 
 const drawerWidth = 240;
 
@@ -66,7 +67,8 @@ const MainSideNav = () => {
                 <Divider sx={{ border: '0.5px solid white' }}/>
                 <List sx={{ textAlign: 'center', margin: 'auto' }}>
                     <Button variant='contained' sx={{ width: '80%', mb: 2 }}>Login</Button>
-                    <Button variant='outlined' sx={{ width: '80%' }}>Sign Up</Button>
+                    <Button variant='outlined' sx={{ width: '80%', mb: 2 }}>Sign Up</Button>
+                    <Typography fontSize={10}>Copyright © 2023 GamedayOdds</Typography>
                 </List>
             </Drawer>
             <Box
