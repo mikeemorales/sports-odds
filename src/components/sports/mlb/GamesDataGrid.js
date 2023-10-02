@@ -8,22 +8,21 @@ import {useApiData} from "./ApiDataProvider";
 const GamesDataGrid = () => {
     const { apiData, setNewApiData } = useApiData()
 
-    useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const response = await axios.get('http://localhost:9001/api/odds');
-                const newData = response.data;
-
-                // Check if the fetched data is different from the current data
-                if (JSON.stringify(newData) !== JSON.stringify(apiData)) {
-                    setNewApiData(newData)
-                }
-            } catch (error) {
-                console.error('Error fetching data:', error)
-            }
-        };
-        fetchData();
-    }, [apiData, setNewApiData])
+    // useEffect(() => {
+    //     const fetchData = async () => {
+    //         try {
+    //             const response = await axios.get('http://localhost:9001/api/odds');
+    //             const newData = response.data;
+    //             // Check if the fetched data is different from the current data
+    //             if (JSON.stringify(newData) !== JSON.stringify(apiData)) {
+    //                 setNewApiData(newData)
+    //             }
+    //         } catch (error) {
+    //             console.error('Error fetching data:', error)
+    //         }
+    //     };
+    //     fetchData();
+    // }, [apiData, setNewApiData])
 
     const columns = [
         {

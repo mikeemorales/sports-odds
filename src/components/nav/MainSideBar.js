@@ -23,6 +23,7 @@ const MainSideNav = () => {
                     width: `calc(100% - ${drawerWidth}px)`,
                     ml: `${drawerWidth}px`,
                     backgroundColor: 'transparent',
+                    borderBottom: '1px solid white'
                 }}
             >
                 <Toolbar>
@@ -51,9 +52,9 @@ const MainSideNav = () => {
                 anchor="left"
             >
                 <Toolbar>
-                    LOGO
+                    <img src='/GDO-Logo-White.png' alt='GameDay Odds' style={{ maxWidth: '100%', height: 'auto', marginTop: 10 }}/>
                 </Toolbar>
-                <List sx={{ height: '70%' }}>
+                <List sx={{ height: '70%', margin: 'auto' }}>
                     {['MLB', 'NFL', 'NBA', 'NHL'].map((text, index) => (
                         <ListItem key={index} disablePadding>
                             <ListItemButton>
@@ -62,11 +63,11 @@ const MainSideNav = () => {
                         </ListItem>
                     ))}
                 </List>
-                <List sx={{ height: '30%' }}>
-                    <Button variant='contained' sx={{ width: '80%' }}>Login</Button>
+                <Divider sx={{ border: '0.5px solid white' }}/>
+                <List sx={{ textAlign: 'center', margin: 'auto' }}>
+                    <Button variant='contained' sx={{ width: '80%', mb: 2 }}>Login</Button>
                     <Button variant='outlined' sx={{ width: '80%' }}>Sign Up</Button>
                 </List>
-                <Divider/>
             </Drawer>
             <Box
                 component="main"
