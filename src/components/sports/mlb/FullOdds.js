@@ -54,13 +54,13 @@ const FullOdds = () => {
                             OPENING
                         </Typography>
                         <Typography sx={{ mb: 3 }}>
-                            OPENING LINE
+                            +7 / -7
                         </Typography>
                         <Typography sx={{ mb: 3 }}>
-                            OPENING O/U
+                            o16 / u16
                         </Typography>
                         <Typography>
-                            OPENING ML
+                            +210 / -190
                         </Typography>
                     </Grid>
                     <Grid item xs={2}>
@@ -68,17 +68,17 @@ const FullOdds = () => {
                             CURRENT
                         </Typography>
                         <Typography sx={{ mb: 3 }}>
-                            CURRENT LINE
+                            +5.5 / -5.5
                         </Typography>
                         <Typography sx={{ mb: 3 }}>
-                            CURRENT O/U
+                            o15 / u15
                         </Typography>
                         <Typography>
-                            CURRENT ML
+                            +220 / - 210
                         </Typography>
                     </Grid>
                     <Grid item xs={2}>
-                        <Typography sx={{ fontSize: 12, mb: 3 }}>VS.</Typography>
+                        <Typography sx={{ fontSize: 12, mb: 3 }}>AWAY VS. HOME</Typography>
                         <Typography sx={{ mb: 3 }}>Run Line</Typography>
                         <Typography sx={{ mb: 3 }}>Over/Under</Typography>
                         <Typography>ML</Typography>
@@ -88,13 +88,13 @@ const FullOdds = () => {
                             CURRENT
                         </Typography>
                         <Typography sx={{ mb: 3 }}>
-                            CURRENT LINE
+                            +5.5 / -5.5
                         </Typography>
                         <Typography sx={{ mb: 3 }}>
-                            CURRENT O/U
+                            o15 / u15
                         </Typography>
                         <Typography>
-                            CURRENT ML
+                            +220 / - 210
                         </Typography>
                     </Grid>
                     <Grid item xs={2}>
@@ -102,13 +102,13 @@ const FullOdds = () => {
                             OPENING
                         </Typography>
                         <Typography sx={{ mb: 3 }}>
-                            OPENING LINE
+                            +7 / -7
                         </Typography>
                         <Typography sx={{ mb: 3 }}>
-                            OPENING O/U
+                            o16 / u16
                         </Typography>
                         <Typography>
-                            OPENING ML
+                            +210 / -190
                         </Typography>
                     </Grid>
                 </Grid>
