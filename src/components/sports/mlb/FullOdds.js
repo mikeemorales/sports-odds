@@ -48,35 +48,67 @@ const FullOdds = () => {
                 LINE UPS
             </Grid>
             <Grid container>
-                <Grid item xs={8} sx={{ display: 'flex' }}>
+                <Grid item xs={8} sx={{ display: 'flex', textAlign: 'center' }}>
                     <Grid item xs={2}>
-                        OPENING
-                        <Typography>
+                        <Typography sx={{ fontSize: 12, mb: 3 }}>
+                            OPENING
+                        </Typography>
+                        <Typography sx={{ mb: 3 }}>
                             OPENING LINE
                         </Typography>
-                    </Grid>
-                    <Grid item xs={2}>
-                        CURRENT
+                        <Typography sx={{ mb: 3 }}>
+                            OPENING O/U
+                        </Typography>
                         <Typography>
-                            CURRENT LINE
+                            OPENING ML
                         </Typography>
                     </Grid>
                     <Grid item xs={2}>
-                        vs.
-                        <Typography>Run Line</Typography>
-                        <Typography>Over/Under</Typography>
+                        <Typography sx={{ fontSize: 12, mb: 3 }}>
+                            CURRENT
+                        </Typography>
+                        <Typography sx={{ mb: 3 }}>
+                            CURRENT LINE
+                        </Typography>
+                        <Typography sx={{ mb: 3 }}>
+                            CURRENT O/U
+                        </Typography>
+                        <Typography>
+                            CURRENT ML
+                        </Typography>
+                    </Grid>
+                    <Grid item xs={2}>
+                        <Typography sx={{ fontSize: 12, mb: 3 }}>VS.</Typography>
+                        <Typography sx={{ mb: 3 }}>Run Line</Typography>
+                        <Typography sx={{ mb: 3 }}>Over/Under</Typography>
                         <Typography>ML</Typography>
                     </Grid>
                     <Grid item xs={2}>
-                        CURRENT
-                        <Typography>
+                        <Typography sx={{ fontSize: 12, mb: 3 }}>
+                            CURRENT
+                        </Typography>
+                        <Typography sx={{ mb: 3 }}>
                             CURRENT LINE
+                        </Typography>
+                        <Typography sx={{ mb: 3 }}>
+                            CURRENT O/U
+                        </Typography>
+                        <Typography>
+                            CURRENT ML
                         </Typography>
                     </Grid>
                     <Grid item xs={2}>
-                        OPENING
-                        <Typography>
+                        <Typography sx={{ fontSize: 12, mb: 3 }}>
+                            OPENING
+                        </Typography>
+                        <Typography sx={{ mb: 3 }}>
                             OPENING LINE
+                        </Typography>
+                        <Typography sx={{ mb: 3 }}>
+                            OPENING O/U
+                        </Typography>
+                        <Typography>
+                            OPENING ML
                         </Typography>
                     </Grid>
                 </Grid>

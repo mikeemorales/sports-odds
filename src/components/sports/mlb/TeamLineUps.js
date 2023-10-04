@@ -3,7 +3,7 @@ import {Grid} from "@mui/material";
 
 const PlayerLineUps = () => {
     return (
-        <Grid sx={{ display: 'flex' }}>
+        <Grid sx={{ display: 'flex', textAlign: 'center' }}>
             <Grid item xs={5}>
                 <ul>
                     <li>PLAYER 1</li>

@@ -7,14 +7,14 @@ export function useApiData() {
 }
 
 export function ApiDataProvider({ children }) {
-    const [apiData, setApiData] = useState([]);
+    const [apiData, setApiData] = useState([])
 
     const setNewApiData = (newData) => {
         // Check if the fetched data is different from the current data
         if (JSON.stringify(newData) !== JSON.stringify(apiData)) {
             setApiData(newData);
         }
-    };
+    }
 
     return (
         <ApiDataContext.Provider value={{ apiData, setNewApiData }}>
