@@ -4,3 +4,8 @@
     height: 100vh; /* Ensure the gradient covers the entire viewport */
 
 }
+
+ul {
+    list-style-type: none;
+    font-size: 0.75rem;
+}

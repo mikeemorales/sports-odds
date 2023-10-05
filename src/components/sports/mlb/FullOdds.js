@@ -42,7 +42,7 @@ const FullOdds = () => {
     return (
         <Grid container>
             <Grid item xs={8} sx={{ borderBottom: '1px solid white', mt: 5, mb: 2 }}>
-                ODDS
+                <Typography>ODDS</Typography>
             </Grid>
             <Grid item xs={4} sx={{ borderBottom: '1px solid white', mt: 5, mb: 2 }}>
                 LINE UPS
